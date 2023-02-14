@@ -1,5 +1,16 @@
 exclude: '^(\.tox|\.env|dist|\.vscode)(/|$)'
 repos:
+  - repo: local
+    hooks:
+      - id: copyright-check
+        name: "Copyright Check"
+        types: [python]
+        entry: |
+          python -m scripts.copyright -s "#" -d scripts -d MSTS -g "*.py" -g "*.pyi"
+        language: system
+        pass_filenames: false
+        verbose: true
+
   - repo: https://github.com/PyCQA/autoflake
     rev: "v2.0.0"
     hooks:
