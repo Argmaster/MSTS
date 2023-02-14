@@ -405,7 +405,7 @@ min-public-methods = 0
 
 [tool.pylint.exceptions] # ANCHOR: tool.pylint.exceptions
 # Exceptions that will emit a warning when caught.
-overgeneral-exceptions = ["BaseException", "Exception"]
+overgeneral-exceptions = ["builtins.BaseException", "builtins.Exception"]
 
 [tool.pylint.format] # ANCHOR: tool.pylint.format
 # Expected format of line ending, e.g. empty (any line ending), LF or CRLF.
