@@ -6,7 +6,7 @@ repos:
         name: "Copyright Check"
         types: [python]
         entry: |
-          python -m scripts.copyright -s "#" -d scripts -d MSTS -g "*.py" -g "*.pyi" -l "LGPL3.md.jinja2"
+          python -m scripts.copyright -s "#" -d scripts -d msts -g "*.py" -g "*.pyi" -l "LGPL3.md.jinja2"
         language: system
         pass_filenames: false
         verbose: true
