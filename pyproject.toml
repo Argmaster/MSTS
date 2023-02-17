@@ -54,7 +54,7 @@ line_length = 88
 [tool.black] # ANCHOR: tool.black
 # https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-format
 line-length = 88
-target-version = ['py38']
+target-version =['py39', 'py310', 'py311']
 extend-exclude = "(external)"
 
 [tool.docformatter]
@@ -70,7 +70,7 @@ blank = true
 #            https://mypy.readthedocs.io/en/stable/command_line.html           #
 #          https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html          #
 # ---------------------------------------------------------------------------- #
-python_version = "3.8"
+python_version = "3.9"
 # A regular expression that matches file names, directory names and paths which
 # mypy should ignore while recursively discovering files to check. Use forward
 #slashes (/) as directory separators on all platforms.
@@ -251,7 +251,7 @@ limit-inference-results = 100
 persistent = true
 # Minimum Python version to use for version dependent checks. Will default to the
 # version used to run pylint.
-py-version = "3.8"
+py-version = "3.9"
 # Discover python modules and packages in the file system subtree.
 # recursive =
 # When enabled, pylint would attempt to guess common misconfiguration and emit
