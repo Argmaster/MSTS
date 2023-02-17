@@ -1,15 +1,22 @@
 exclude: '^(\.tox|\.env|dist|\.vscode)(/|$)'
 repos:
-  - repo: local
+  - repo: https://github.com/Argmaster/autocopyright
+    rev: "7d2bf0a14c7489c891a99ca1c80f2593152dbb7c"
     hooks:
-      - id: copyright-check
-        name: "Copyright Check"
-        types: [python]
-        entry: |
-          python -m scripts.copyright -s "#" -d scripts -d msts -g "*.py" -g "*.pyi" -l "LGPL3.md.jinja2"
-        language: system
-        pass_filenames: false
-        verbose: true
+      - id: autocopyright
+        args:
+          [
+            -s,
+            "#",
+            -d,
+            msts,
+            -g,
+            "*.py",
+            -g,
+            "*.pyi",
+            -l,
+            "./scripts/templates/LGPL3.md.jinja2",
+          ]
 
   - repo: https://github.com/PyCQA/autoflake
     rev: "v2.0.1"
