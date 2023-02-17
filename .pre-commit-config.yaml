@@ -1,7 +1,7 @@
 exclude: '^(\.tox|\.env|dist|\.vscode)(/|$)'
 repos:
   - repo: https://github.com/Argmaster/autocopyright
-    rev: "7d2bf0a14c7489c891a99ca1c80f2593152dbb7c"
+    rev: "v1.0.0"
     hooks:
       - id: autocopyright
         args:
