@@ -1,7 +1,7 @@
 # Copyright 2023 Krzysztof Wiśniewski <argmaster.world@gmail.com>
 #
 # This file is part of MSTS.
-#
+# https://github.com/Argmaster/MSTS
 #
 # MSTS is free software: you can redistribute it and/or modify it under
 # the terms of the GNU Lesser General Public License as published by the Free
