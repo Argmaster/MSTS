@@ -1,3 +1,6 @@
 [submodule "msts/logging"]
 	path = msts/logging
 	url = https://github.com/Argmaster/decent-logger-config
+[submodule "backend/msts/logging"]
+	path = backend/msts/logging
+	url = https://github.com/Argmaster/decent-logger-config
