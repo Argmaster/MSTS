@@ -60,10 +60,10 @@ class Config(BaseModel):
         if path_to_config.exists():
             with path_to_config.open(encoding="utf-8") as file:
                 content = tomlkit.load(file)
-            config = Config(**content)
+            config = cls(**content)
 
         else:
-            config = Config()
+            config = cls()
             with path_to_config.open("w", encoding="utf-8") as file:
                 # .dict() will not convert all fields to serializable
                 content = json.loads(config.json())
