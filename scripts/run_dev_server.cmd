@@ -1,1 +1,1 @@
-uvicorn msts.__main__:app --reload
+uvicorn msts.__main__:server --reload
