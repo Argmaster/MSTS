@@ -31,8 +31,7 @@ snakeviz = "^2.1.1"
 twine = "^4.0.2"
 
 [tool.poetry.scripts]
-msts = "msts.__main__:"
-trsrv = "cssfinder.cli:main"
+msts = "msts.__main__:cli"
 
 [build-system]
 requires = ["poetry-core"]
