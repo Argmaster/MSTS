@@ -1,0 +1,26 @@
+{% extends "bootstrap.html.jinja2" %}
+{% block title %} Log in {% endblock %}
+{% block body %}
+<main>
+    <div class="container text-center min-vh-100 d-flex flex-column">
+        <div class="row align-items-center justify-content-center flex-grow-1">
+            <div class="col-4">
+                <form>
+                    <h2 class="mb-5">Log in</h2>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">User name</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            autocomplete="username">
+                    </div>
+                    <div class="mb-5">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1"
+                            autocomplete="current-password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock%}

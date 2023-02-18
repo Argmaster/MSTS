@@ -29,6 +29,8 @@ from typing import TYPE_CHECKING, ClassVar
 import tomlkit
 from pydantic import BaseModel, Field
 
+from msts.utility import HexSHA1
+
 if TYPE_CHECKING:
     from typing_extensions import Self
 
@@ -37,6 +39,14 @@ class Config(BaseModel):
     CONFIG_ENV_VAR_NAME: ClassVar[str] = "MSTS_CONFIG_PATH"
 
     java_executable: str = Field(default="java")
+
+    class User:
+        """Simplified representation of user data used in configuration file."""
+
+        name: str = Field(default=HexSHA1.random())
+        password: str = Field(default=HexSHA1.random())
+
+    admin: User = Field(default_factory=User)
 
     @classmethod
     def create(cls) -> Self:
