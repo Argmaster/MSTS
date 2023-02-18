@@ -1,7 +1,7 @@
 exclude: '^(\.tox|\.env|dist|\.vscode)(/|$)'
 repos:
   - repo: https://github.com/Argmaster/autocopyright
-    rev: "v1.0.0"
+    rev: "v1.1.0"
     hooks:
       - id: autocopyright
         args:
@@ -16,6 +16,8 @@ repos:
             "*.pyi",
             -l,
             "./scripts/templates/LGPL3.md.jinja2",
+            -e,
+            "{cwd}/msts/logging/log.py",
           ]
 
   - repo: https://github.com/PyCQA/autoflake
