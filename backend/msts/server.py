@@ -61,7 +61,7 @@ environment = jinja2.Environment(
 @server.get("/")
 async def login() -> HTMLResponse:
     """Login page."""
-    template = environment.get_template("login.html.jinja2")
+    template = environment.get_template("webapp.html.jinja2")
     content = await template.render_async()
 
     return HTMLResponse(

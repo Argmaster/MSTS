@@ -1,24 +1,28 @@
-import { getCookie, setCookie } from "./cookie.jsx";
+import { getCookie, setCookie } from "./cookie";
 
-async function authenticate() {
+export async function authenticate() {
     const token = getToken();
 
     if (token == null) {
-        const username_input = document.getElementById("usernameInputField");
+        const username_input = document.getElementById(
+            "usernameInputField"
+        ) as HTMLInputElement;
         const username = username_input.value;
 
-        const password_input = document.getElementById("passwordInputField");
+        const password_input = document.getElementById(
+            "passwordInputField"
+        ) as HTMLInputElement;
         const password = password_input.value;
 
         await send_authenticate(username, password);
     }
 }
 
-function getToken() {
+export function getToken() {
     return getCookie("token");
 }
 
-async function send_authenticate(username, password) {
+async function send_authenticate(username: string, password: string) {
     const formData = new FormData();
     formData.append("username", username);
     formData.append("password", password);
@@ -30,11 +34,9 @@ async function send_authenticate(username, password) {
     const content = await response.json();
 
     setToken(content.access_token);
+    console.log(`Authenticated; token ${content.access_token}`);
 }
 
-function setToken(token) {
+function setToken(token: string) {
     setCookie("token", token, 29);
 }
-
-export { authenticate as authenticate };
-export { getToken as getToken };

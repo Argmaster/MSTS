@@ -1,4 +1,4 @@
-function getCookie(name) {
+export function getCookie(name: string) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(";");
     for (var i = 0; i < ca.length; i++) {
@@ -10,7 +10,7 @@ function getCookie(name) {
     return null;
 }
 
-function setCookie(name, value, minutes) {
+export function setCookie(name: string, value: any, minutes: number) {
     var expires = "";
     if (minutes) {
         var date = new Date();
@@ -20,11 +20,7 @@ function setCookie(name, value, minutes) {
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
 
-function eraseCookie(name) {
+export function eraseCookie(name: string) {
     document.cookie =
         name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }
-
-export { getCookie as getCookie };
-export { setCookie as setCookie };
-export { eraseCookie as eraseCookie };
