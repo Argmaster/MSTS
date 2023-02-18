@@ -1,6 +1,6 @@
 {% extends "bootstrap.html.jinja2" %}
 {% block head %}
-<script src="/static/auth.js"></script>
+<script defer src="/static/bundle.js"></script>
 {% endblock %}
 {% block title %} Log in {% endblock %}
 {% block body %}
@@ -20,7 +20,7 @@
                         <input type="password" class="form-control" id="passwordInputField" name="password"
                             autocomplete="current-password">
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="authenticate()">Submit</button>
+                    <button type="button" class="btn btn-primary" id="login-submit">Submit</button>
                 </div>
             </div>
         </div>

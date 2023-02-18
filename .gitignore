@@ -940,3 +940,4 @@ typechecking/
 \#*
 \#*/
 *.env
+msts.toml

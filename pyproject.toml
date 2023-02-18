@@ -5,6 +5,7 @@ description = "Minecraft Status Tracking Server - HTTP web application for track
 authors = ["Krzysztof Wiśniewski <argmaster.world@gmail.com>"]
 repository = "https://github.com/Argmaster/MSTS"
 readme = "README.md"
+packages = [{include = "msts", from = "backend"}]
 
 [tool.poetry.dependencies] # ANCHOR: tool.poetry.dependencies
 python = "^3.9"

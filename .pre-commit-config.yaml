@@ -1,5 +1,16 @@
 exclude: '^(\.tox|\.env|dist|\.vscode)(/|$)'
 repos:
+  - repo: local
+    hooks:
+      - id: webpack
+        name: "webpack"
+        always_run: true
+        entry: |
+          ./scripts/build_webpack_prod.cmd
+        language: script
+        pass_filenames: false
+        verbose: true
+
   - repo: https://github.com/Argmaster/autocopyright
     rev: "v1.1.0"
     hooks:
