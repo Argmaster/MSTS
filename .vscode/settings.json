@@ -1,0 +1,23 @@
+{
+    "cSpell.words": [
+        "fastapi",
+        "msts",
+        "passlib",
+        "pydantic",
+        "tomlkit",
+        "urandom",
+        "uvicorn"
+    ],
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoImportUserSymbols": true,
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.importFormat": "absolute",
+    "python.analysis.indexing": true,
+    "python.analysis.packageIndexDepths": [
+        {
+            "name": "fastapi",
+            "depth": 10
+        }
+    ]
+}
