@@ -29,8 +29,6 @@ from typing import TYPE_CHECKING, ClassVar
 import tomlkit
 from pydantic import BaseModel, Field
 
-from msts.utility import HexSHA1
-
 if TYPE_CHECKING:
     from typing_extensions import Self
 
@@ -38,15 +36,31 @@ if TYPE_CHECKING:
 class Config(BaseModel):
     CONFIG_ENV_VAR_NAME: ClassVar[str] = "MSTS_CONFIG_PATH"
 
-    java_executable: str = Field(default="java")
+    class Java(BaseModel):
+        """Java runtime configuration."""
 
-    class User:
+        executable: str = Field(default="java")
+        extra_args: list[str] = Field(default=["-Xmx4G"])
+        server_jar: str = Field(default="minecraft_server.jar")
+
+    java: Config.Java = Field(default_factory=Java)
+
+    class User(BaseModel):
         """Simplified representation of user data used in configuration file."""
 
-        name: str = Field(default=HexSHA1.random())
-        password: str = Field(default=HexSHA1.random())
+        name: str = Field(default=os.urandom(16).hex())
+        password: str = Field(default=os.urandom(16).hex())
 
-    admin: User = Field(default_factory=User)
+    admin: Config.User = Field(default_factory=User)
+
+    class TokenAuth(BaseModel):
+        """Login secrets."""
+
+        secret_key: str = Field(default=os.urandom(32).hex())
+        algorithm: str = Field(default="HS256")
+        expire_minutes: int = Field(default=30)
+
+    token_auth: Config.TokenAuth = Field(default_factory=TokenAuth)
 
     @classmethod
     def create(cls) -> Self:
@@ -74,9 +88,13 @@ class Config(BaseModel):
 
         else:
             config = cls()
+            content = json.loads(config.json())
+
             with path_to_config.open("w", encoding="utf-8") as file:
                 # .dict() will not convert all fields to serializable
-                content = json.loads(config.json())
                 tomlkit.dump(content, file)
 
         return config
+
+
+Config.update_forward_refs()
