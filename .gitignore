@@ -941,4 +941,4 @@ typechecking/
 \#*/
 *.env
 msts.toml
-backend/msts/static/bundle.js
+backend/msts/static/bundle.*

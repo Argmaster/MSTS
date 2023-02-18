@@ -6,6 +6,7 @@ authors = ["Krzysztof Wiśniewski <argmaster.world@gmail.com>"]
 repository = "https://github.com/Argmaster/MSTS"
 readme = "README.md"
 packages = [{include = "msts", from = "backend"}]
+include = ["backend/msts/static/*"]
 
 [tool.poetry.dependencies] # ANCHOR: tool.poetry.dependencies
 python = "^3.9"
