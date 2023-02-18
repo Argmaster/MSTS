@@ -25,6 +25,6 @@ function eraseCookie(name) {
         name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }
 
-exports.getCookie = getCookie;
-exports.setCookie = setCookie;
-exports.eraseCookie = eraseCookie;
+export { getCookie as getCookie };
+export { setCookie as setCookie };
+export { eraseCookie as eraseCookie };

@@ -1,4 +1,4 @@
-const cookie = require("./cookie.js");
+import { getCookie, setCookie } from "./cookie.jsx";
 
 async function authenticate() {
     const token = getToken();
@@ -15,7 +15,7 @@ async function authenticate() {
 }
 
 function getToken() {
-    return cookie.getCookie("token");
+    return getCookie("token");
 }
 
 async function send_authenticate(username, password) {
@@ -33,8 +33,8 @@ async function send_authenticate(username, password) {
 }
 
 function setToken(token) {
-    cookie.setCookie("token", token, 29);
+    setCookie("token", token, 29);
 }
 
-exports.authenticate = authenticate;
-exports.getToken = getToken;
+export { authenticate as authenticate };
+export { getToken as getToken };

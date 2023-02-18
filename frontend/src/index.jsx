@@ -1,4 +1,4 @@
-const { authenticate, getToken } = require("./auth.js");
+import { authenticate, getToken } from "./auth.jsx";
 
 async function redirectToMenu() {
     const token = getToken();
@@ -22,7 +22,7 @@ async function redirectToMenu() {
 }
 
 (async () => {
-    const was_redirected = await redirectToMenu();
+    const was_redirected = false; // await redirectToMenu();
 
     if (!was_redirected) {
         const login_submit = document.getElementById("login-submit");
